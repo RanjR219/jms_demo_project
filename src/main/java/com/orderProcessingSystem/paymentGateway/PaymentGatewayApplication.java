@@ -8,7 +8,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 public class PaymentGatewayApplication {
-    public static void main(String[] args) throws NamingException, JMSException, InterruptedException {
+    public static void main(String[] args) throws NamingException, JMSException {
         InitialContext context = new InitialContext();
         Topic topic = (Topic) context.lookup("Topic/orderTopic");
         try (ActiveMQConnectionFactory cf = new ActiveMQConnectionFactory();

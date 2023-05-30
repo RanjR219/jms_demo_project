@@ -19,9 +19,9 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @PostMapping(value="/order")
+    @PostMapping(value="/orders")
     public ResponseEntity<String> placeOrder(@Valid @RequestBody Order order) throws NamingException, ApplicationException {
-       orderService.processOrder(order);
+        orderService.processOrder(order);
         String successMessage = "INSERT_SUCCESS ";
         return new ResponseEntity<>(successMessage, HttpStatus.CREATED);
     }
